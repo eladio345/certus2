@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -34,7 +35,7 @@ app.use(express.json());
 app.use(cors());
 
 
-const MONGO_URI = "mongodb+srv://60736435:LXVcQ3b7yFCLrolU@cluster0.e6e7x3o.mongodb.net/ayuda?retryWrites=true&w=majority&appName=Cluster0";
+const MONGO_URI = process.MONGO_URI;
 
 mongoose.connect(MONGO_URI).then(() => {
   console.log("Se conectó exitosamente ");
