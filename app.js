@@ -8,7 +8,6 @@ const swaggerJsdoc = require("swagger-jsdoc");
 
 const app = express();
 
-// Configuración de Swagger
 const swaggerOption = {
   definition: {
     openapi: "3.0.0",
@@ -33,6 +32,7 @@ const swaggerDocs = swaggerJsdoc(swaggerOption);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(express.json());
 app.use(cors());
+
 
 const MONGO_URI = "mongodb+srv://60736435:LXVcQ3b7yFCLrolU@cluster0.e6e7x3o.mongodb.net/ayuda?retryWrites=true&w=majority&appName=Cluster0";
 
